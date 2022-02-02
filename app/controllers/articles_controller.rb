@@ -25,11 +25,13 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # We have to specify what data or what exact parameters should be submitted when we create a new article so that a malicious user cannot submit extra form
-  # fields and overwrite private data. We specify the parameters here also so that we don't have to individually type them out in Article.new.
+=begin
+  We have to specify what data or what exact parameters should be submitted when we create a new article so that a malicious user cannot submit extra form
+  fields and overwrite private data. We specify the parameters here also so that we don't have to individually type them out in Article.new.
 
-  # The require method ensures that a specific parameter is present, and if it's not provided, the require method throws an error.
-  # The permit method returns a copy of the parameters object, returning only the permitted keys and values.
+  The require method ensures that a specific parameter is present, and if it's not provided, the require method throws an error.
+  The permit method returns a copy of the parameters object, returning only the permitted keys and values.
+=end
   private
     def article_params
       params.require(:article).permit(:title, :body)
